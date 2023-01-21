@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/mattgonewild/dat";
+option go_package = "github.com/mattgonewild/di";
 
 service DataLayer {
     rpc CreateImg (CreateImgRequest) returns (CreateImgResponse);
