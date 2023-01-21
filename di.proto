@@ -1,0 +1,46 @@
+syntax = "proto3";
+option go_package = "github.com/mattgonewild/dat";
+
+service DataLayer {
+    rpc CreateImg (CreateImgRequest) returns (CreateImgResponse);
+    rpc ReadImg (ReadImgRequest) returns (ReadImgResponse);
+    rpc UpdateImg (UpdateImgRequest) returns (UpdateImgResponse);
+    rpc DeleteImg (DeleteImgRequest) returns (DeleteImgResponse);
+}
+
+message CreateImgRequest {
+    string id = 1;
+    bytes data = 2;
+    bool private = 3;
+}
+
+message CreateImgResponse {
+    bool error = 1;
+    string baseUrl = 2;
+}
+
+message ReadImgRequest {
+    string id = 1;
+}
+
+message ReadImgResponse {
+    bool error = 1;
+    bytes data = 2;
+}
+
+message UpdateImgRequest {
+    string id = 1;
+    bool private = 2;
+}
+
+message UpdateImgResponse {
+    bool error = 1;
+}
+
+message DeleteImgRequest {
+    string id = 1;
+}
+
+message DeleteImgResponse {
+    bool error = 1;
+}
